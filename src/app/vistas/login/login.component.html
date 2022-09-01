@@ -1,1 +1,28 @@
-<p>login works!</p>
+<div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Edad uno</span>
+    <input type="number" class="form-control" placeholder="Edad uno" aria-label="Edad uno" aria-describedby="basic-addon1" [(ngModel)]="suma.edadUno">
+    
+</div>
+<div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Edad dos</span>
+    <input type="number" class="form-control" placeholder="Edad uno" aria-label="Edad uno" aria-describedby="basic-addon1" [(ngModel)]="suma.edadDOs">
+</div>
+
+<button type="button" class="btn btn-primary" (click)="suma.calcular()">calcular</button>
+<button type="button" class="btn btn-outline-primary" (click)="suma.limpiar()">limpiar</button>
+
+<br/>
+suma de edades <p>{{suma.edadSumada}}</p>
+<br/>
+promedio de edades <p>{{suma.edadPromedio}}</p>
+<br/>
+<div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon3">User</span>
+    <input type="string" class="form-control" placeholder="User" aria-label="User" aria-describedby="basic-addon3" [(ngModel)]="user">
+</div>
+<div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon4">Password</span>
+    <input type="password" class="form-control" placeholder="password" aria-label="password" aria-describedby="basic-addon4" [(ngModel)]="password">
+</div>
+<p>usuario: admin Clave: admin</p>
+<button type="button" class="btn btn-primary" (click)="login()">Login</button>

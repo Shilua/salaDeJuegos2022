@@ -8,6 +8,7 @@ import { JuegoComponent } from './vistas/juego/juego.component';
 import { LoginComponent } from './vistas/login/login.component';
 import { BienvenidoComponent } from './vistas/bienvenido/bienvenido.component';
 import { ErrorComponent } from './vistas/error/error.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ErrorComponent } from './vistas/error/error.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
