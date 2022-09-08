@@ -1,28 +1,18 @@
-<div class="input-group mb-3">
-    <span class="input-group-text" id="basic-addon1">Edad uno</span>
-    <input type="number" class="form-control" placeholder="Edad uno" aria-label="Edad uno" aria-describedby="basic-addon1" [(ngModel)]="suma.edadUno">
-    
-</div>
-<div class="input-group mb-3">
-    <span class="input-group-text" id="basic-addon1">Edad dos</span>
-    <input type="number" class="form-control" placeholder="Edad uno" aria-label="Edad uno" aria-describedby="basic-addon1" [(ngModel)]="suma.edadDOs">
-</div>
+<div class="row justify-content-center text-center" style="margin-top: 125px;">
+    <div class="col-4">
+        <h1 class="cover-heading">Maximiliano vargas.</h1>
+          <img src="../../../assets/img/quienSoy.jpg" alt="" class="img-fluid rounded-circle" width="250" height="250">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3">Email</span>
+            <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon3" [(ngModel)]="user">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon4">Password</span>
+            <input type="password" class="form-control" placeholder="password" aria-label="password" aria-describedby="basic-addon4" [(ngModel)]="password">
+        </div>
+        <p>usuario: admin@admin.com Clave: admin</p>
+        <button type="button" class="btn btn-danger" (click)="login()">Login</button>
+        <button type="button" class="btn btn-otuline-danger" disabled>Register</button>
 
-<button type="button" class="btn btn-primary" (click)="suma.calcular()">calcular</button>
-<button type="button" class="btn btn-outline-primary" (click)="suma.limpiar()">limpiar</button>
-
-<br/>
-suma de edades <p>{{suma.edadSumada}}</p>
-<br/>
-promedio de edades <p>{{suma.edadPromedio}}</p>
-<br/>
-<div class="input-group mb-3">
-    <span class="input-group-text" id="basic-addon3">User</span>
-    <input type="string" class="form-control" placeholder="User" aria-label="User" aria-describedby="basic-addon3" [(ngModel)]="user">
+    </div>
 </div>
-<div class="input-group mb-3">
-    <span class="input-group-text" id="basic-addon4">Password</span>
-    <input type="password" class="form-control" placeholder="password" aria-label="password" aria-describedby="basic-addon4" [(ngModel)]="password">
-</div>
-<p>usuario: admin Clave: admin</p>
-<button type="button" class="btn btn-primary" (click)="login()">Login</button>

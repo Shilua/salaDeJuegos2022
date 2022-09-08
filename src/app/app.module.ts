@@ -10,6 +10,7 @@ import { BienvenidoComponent } from './vistas/bienvenido/bienvenido.component';
 import { ErrorComponent } from './vistas/error/error.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SobreMiComponent } from './vistas/sobre-mi/sobre-mi.component';
+import { NavBarComponent } from './vistas/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SobreMiComponent } from './vistas/sobre-mi/sobre-mi.component';
     LoginComponent,
     BienvenidoComponent,
     ErrorComponent,
-    SobreMiComponent
+    SobreMiComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
