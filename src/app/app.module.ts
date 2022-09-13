@@ -11,6 +11,8 @@ import { ErrorComponent } from './vistas/error/error.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SobreMiComponent } from './vistas/sobre-mi/sobre-mi.component';
 import { NavBarComponent } from './vistas/nav-bar/nav-bar.component';
+import { ToastContainerComponent } from './vistas/toast-container/toast-container.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { NavBarComponent } from './vistas/nav-bar/nav-bar.component';
     BienvenidoComponent,
     ErrorComponent,
     SobreMiComponent,
-    NavBarComponent
+    NavBarComponent,
+    ToastContainerComponent
   ],
   imports: [
     BrowserModule,

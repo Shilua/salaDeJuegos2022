@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Suma } from 'src/app/classes/suma';
 import { User } from 'src/app/classes/user';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
 
   public user:string = '';
   public password:string = '';
@@ -18,7 +19,10 @@ export class LoginComponent implements OnInit {
 
 
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private toastService:ToastService
+    ) {
     this.userCreds = new User();
     this.suma = new Suma();
   }
@@ -36,11 +40,16 @@ export class LoginComponent implements OnInit {
       this.usuarioString = JSON.stringify(this.userCreds);
       localStorage.setItem('usuario', this.usuarioString);
     } else {
-      this.router.navigate(['/error']);
+      this.toastService.show('el usuario no es valido', {classname : 'bg-danger text-light', delay:3000})
+      //this.router.navigate(['/error']);
     }
   }
 
   ngOnInit(): void {
+  }
+
+  ngOnDestroy(): void {
+    this.toastService.clear();
   }
 
 }
