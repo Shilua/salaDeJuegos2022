@@ -2,6 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Suma } from 'src/app/classes/suma';
 import { User } from 'src/app/classes/user';
+import { AuthLogService } from 'src/app/services/auth-log.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
@@ -11,38 +13,55 @@ import { ToastService } from 'src/app/services/toast.service';
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
-  public user:string = '';
-  public password:string = '';
-  public userCreds: User;
+  public user: User;
   public usuarioString:string = '';
-  public suma:Suma;
-
-
 
   constructor(
     private router: Router,
-    private toastService:ToastService
+    private toastService:ToastService,
+    private authServ:AuthService,
+    private logServ:AuthLogService
     ) {
-    this.userCreds = new User();
-    this.suma = new Suma();
+    this.user = new User();
   }
 
 
-  
+  completeData(){
+    this.user.email = 'admin@admin.com';
+    this.user.password = 'Administrador1';
+  }
 
   login(){
-    
-    if (this.user == 'admin@admin.com' && this.password == 'admin') {
-      //this.userCreds.user = this.user;
-      //this.userCreds.password = this.password;
-      this.router.navigate(['/bienvenido']);
+    console.log(this.user)
+    this.authServ.onLogin(this.user).then(
+      response => {
+        let fecha = new Date();
+        if(response?.user != null){ 
+          this.logServ.createElement({
+            usuario:this.user.email,
+            fecha: fecha
+          });
+          localStorage.setItem('user',this.user.email);
+          this.router.navigate(['/bienvenido']);
+        }else{
+          this.toastService.show(
+            'el usuario no es valido o la contraseña es incorrecta', 
+            {classname : 'bg-danger text-light', delay:3000}
+          )
+        }
+      }
+    ).catch(
+      err => {
+        this.toastService.show(
+          'el usuario no es valido', 
+          {classname : 'bg-danger text-light', delay:3000}
+        )
+      }
+    )
+  }
 
-      this.usuarioString = JSON.stringify(this.userCreds);
-      localStorage.setItem('usuario', this.usuarioString);
-    } else {
-      this.toastService.show('el usuario no es valido', {classname : 'bg-danger text-light', delay:3000})
-      //this.router.navigate(['/error']);
-    }
+  register(){
+    this.router.navigate(['/registro'])
   }
 
   ngOnInit(): void {

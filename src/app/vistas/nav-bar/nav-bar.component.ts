@@ -7,8 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
-
-  constructor(private router:Router) { }
+  public userEmail:string|null
+  constructor(private router:Router) {
+    this.userEmail = localStorage.getItem('user');
+   }
 
   bienvenido(){
     this.router.navigate(["/bienvenido"])
@@ -16,6 +18,11 @@ export class NavBarComponent implements OnInit {
 
   sobreMi(){
     this.router.navigate(["/bienvenido/sobre-mi"])
+  }
+
+  logOut(){
+    localStorage.removeItem('user')
+    this.router.navigate(['/'])
   }
   
   ngOnInit(): void {

@@ -12,6 +12,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SobreMiComponent } from './vistas/sobre-mi/sobre-mi.component';
 import { NavBarComponent } from './vistas/nav-bar/nav-bar.component';
 import { ToastContainerComponent } from './vistas/toast-container/toast-container.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
+import { environment } from 'src/environments/environment';
+import { RegisterComponent } from './vistas/register/register.component';
 
 
 @NgModule({
@@ -23,13 +28,17 @@ import { ToastContainerComponent } from './vistas/toast-container/toast-containe
     ErrorComponent,
     SobreMiComponent,
     NavBarComponent,
-    ToastContainerComponent
+    ToastContainerComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
