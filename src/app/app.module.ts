@@ -17,6 +17,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 import { environment } from 'src/environments/environment';
 import { RegisterComponent } from './vistas/register/register.component';
+import { ChatComponent } from './vistas/chat/chat.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { RegisterComponent } from './vistas/register/register.component';
     SobreMiComponent,
     NavBarComponent,
     ToastContainerComponent,
-    RegisterComponent
+    RegisterComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

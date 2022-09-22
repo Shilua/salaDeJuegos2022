@@ -1,0 +1,30 @@
+.message-input {
+    width: 100%;
+    border: 1px solid var(--ion-color-medium);
+    border-radius: 6px;
+    background: #fff;
+    resize: none;
+    margin-top: 0px;
+    --padding-start: 8px;
+}
+ 
+.message {
+    padding: 10px !important;
+    border-radius: 10px !important;
+    margin-bottom: 4px !important;
+    white-space: pre-wrap;
+    text-align: right; 
+}
+ 
+
+ 
+.other-message {
+    background: rgba(223, 72, 72, 0);
+    color: rgb(50, 217, 28);
+}
+ 
+.time {
+    color: #dfdfdf;
+    float: right;
+    font-size: small;
+}
