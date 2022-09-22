@@ -9,15 +9,16 @@ import { SobreMiComponent } from './vistas/sobre-mi/sobre-mi.component';
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'registro', component: RegisterComponent },
-  {
-    path: 'bienvenido', 
+  /*{
+    path: 'bienvenidoOld', 
     component: BienvenidoComponent , 
     children: [
       {path: 'sobre-mi', component: SobreMiComponent}
     ]
   },
   {path: 'sobre-mi', component: SobreMiComponent},
-  {path: 'error', component: ErrorComponent},
+  {path: 'error', component: ErrorComponent},*/
+  { path: 'bienvenido', loadChildren: () => import('./bienvenido/bienvenido.module').then(m => m.BienvenidoModule) },
   {path: '**', component: ErrorComponent}
 
 ];
