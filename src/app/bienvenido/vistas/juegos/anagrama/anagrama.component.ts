@@ -31,7 +31,7 @@ export class AnagramaComponent implements OnInit {
     this.letras = this.mezclar(this.respuestaReal);
     this.verificar()
 
-    console.log(this.respuesta);
+    this.respuesta = '';
   }
 
   cargarLetra(letra:String){
