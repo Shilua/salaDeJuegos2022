@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 import { ErrorComponent } from './vistas/error/error.component';
 import { LoginComponent } from './vistas/login/login.component';
 import { RegisterComponent } from './vistas/register/register.component';
@@ -16,7 +17,12 @@ const routes: Routes = [
   },
   {path: 'sobre-mi', component: SobreMiComponent},
   {path: 'error', component: ErrorComponent},*/
-  { path: 'bienvenido', loadChildren: () => import('./bienvenido/bienvenido.module').then(m => m.BienvenidoModule) },
+  { 
+    path: 'bienvenido', 
+    loadChildren: () => import('./bienvenido/bienvenido.module').then(m => m.BienvenidoModule),
+    canActivate:[AuthGuard]
+  
+  },
   {path: '**', component: ErrorComponent}
 
 ];

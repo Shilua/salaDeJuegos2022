@@ -1,0 +1,14 @@
+<div class="text-center">
+    <h1>Anagrama</h1>
+    <div >
+        <button  *ngFor="let letra of letras" class="btn btn-danger" (click)="cargarLetra(letra)"> {{ letra }} </button>
+    </div>
+    <br>
+    <button (click)="borrar()" class="btn btn-outline-danger">borrar letra</button>
+    <button class="btn btn-danger" (click)="verificar()">Verificar</button>
+    <h2>{{respuesta}}</h2>
+    <label [hidden]="label">Ganaste!!</label>
+    <label [hidden]="!label">Todavia no ganaste</label>
+<br>
+    <button class="btn btn-danger" (click)="JuegoNuevo()">Juego Nuevo</button>
+</div>
