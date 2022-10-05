@@ -1,0 +1,106 @@
+<app-toasts aria-live="polite" aria-atomic="true"></app-toasts>
+<form [formGroup]="formularioEncuesta" class="row g-3">
+    <div class="col-md-6">
+        <label for="id" class="form-label">Nombre</label>
+        <input
+            type="text" class="form-control" 
+            formControlName="nombre" [(ngModel)]="encuesta.nombre"
+            id="nombre"
+        >   
+    </div>
+    <div class="col-md-6">
+        <label for="apellido" class="form-label">Apellido</label>
+        <input 
+            type="text" class="form-control" 
+            formControlName="apellido" [(ngModel)]="encuesta.apellido"
+            id="apellido"
+        > 
+    </div>
+    <div class="col-md-6">
+        <label for="edad" class="form-label">Edad</label>
+        <input 
+            type="number" class="form-control" 
+            formControlName="edad" [(ngModel)]="encuesta.edad"
+            id="edad"
+        >   
+    </div>
+    <div class="col-md-6">
+        <label for="telefono" class="form-label">Telefono</label>
+        <input 
+            type="number" class="form-control" 
+            formControlName="telefono" [(ngModel)]="encuesta.telefono"
+            id="telefono"
+        > 
+    </div>
+    <div class="class col-md-12">
+        <input 
+            type="checkbox" class="form-check-input" 
+            id="checkbox" [(ngModel)]="encuesta.recomienda"
+            formControlName="recomienda"
+            name="recomienda"
+        >
+        <label for="checkbox" class="form-label">
+            ¿recomendaria esta pagina? (marque el check si su respuesta es si)
+        </label>
+    </div>
+    <fieldset class="row mb-3">
+        <legend class="col-form-label">Califique del uno al cinco nuestra pagina</legend>
+        <div class="col-sm-12">
+            <div class="form-check form-check-inline">
+                <input 
+                    class="form-check-input" type="radio" 
+                    name="puntuacion" formControlName="puntuacion" 
+                    id="inlineRadio1" value=1
+                    (change)="changeRadioValue($event)"
+                >
+                <label class="form-check-label" for="inlineRadio1">1</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input 
+                    class="form-check-input" type="radio" 
+                    name="puntuacion" formControlName="puntuacion" 
+                    id="inlineRadio2" value=2
+                    (change)="changeRadioValue($event)"
+                >
+                <label class="form-check-label" for="inlineRadio2">2</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input 
+                    class="form-check-input" type="radio" 
+                    name="puntuacion" formControlName="puntuacion" 
+                    id="inlineRadio3" value=3
+                    (change)="changeRadioValue($event)"
+                >
+                <label class="form-check-label" for="inlineRadio3">3</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input 
+                    class="form-check-input" type="radio" 
+                    name="puntuacion" formControlName="puntuacion" 
+                    id="inlineRadio4" value=4
+                    (change)="changeRadioValue($event)"
+                >
+                <label class="form-check-label" for="inlineRadio4">4</label>
+              </div><div class="form-check form-check-inline">
+                <input 
+                    class="form-check-input" type="radio" 
+                    name="puntuacion" formControlName="puntuacion" 
+                    id="inlineRadio5" value=5
+                    (change)="changeRadioValue($event)"
+                >
+                <label class="form-check-label" for="inlineRadio5">5</label>
+              </div>
+        </div>
+      </fieldset>
+      <div class="col-md-12">
+        <label for="recomendacion">¿Que mejorarias a la web?</label>
+        <textarea 
+            name="recomendacion" formControlName="recomendacion"
+            class="form-control" placeholder="Leave a comment here" 
+            id="recomendacion" style="height: 100px" 
+            [(ngModel)]="encuesta.opinion"
+        >
+        </textarea>
+    </div>
+      <button class="btn btn-danger" (click)="enviar()" [disabled]="!formularioEncuesta.valid">Enviar encuesta</button>
+</form>

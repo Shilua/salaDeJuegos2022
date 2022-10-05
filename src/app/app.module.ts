@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
 import { environment } from 'src/environments/environment';
 import { RegisterComponent } from './vistas/register/register.component';
+import { ToastService } from './services/toast.service';
 
 
 @NgModule({
@@ -30,7 +31,11 @@ import { RegisterComponent } from './vistas/register/register.component';
     NgbModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    ReactiveFormsModule
+  ],
+  exports: [
+    ToastContainerComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
