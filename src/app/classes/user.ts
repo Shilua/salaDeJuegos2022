@@ -1,7 +1,9 @@
 export class User {
+    public uid:string|undefined;
     public nombre:string|undefined;
     public apellido:string|undefined;
-    public password:string|undefined;
+    public email:string = '';
+    public password:string ='';
 
     mostrarUsuario(){
         console.log(this)

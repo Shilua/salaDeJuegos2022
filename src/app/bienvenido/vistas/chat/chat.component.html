@@ -1,0 +1,29 @@
+<div *ngFor="let message of messages | async">
+    <div class="alert alert-primary" *ngIf="!message.myMsg; else myMessage">
+        <b >{{ message.fromName }}</b><br>
+        <span>{{ message.msg }}
+        <div class="time"><br>{{ message.createdAt?.toMillis() | date:'short' }}</div>
+        </span>
+    </div>
+    <ng-template #myMessage>
+        <div class="alert alert-success" >
+            <span>{{ message.msg }}
+            <div class="time"><br>{{ message.createdAt?.toMillis() | date:'short' }}</div>
+            </span>
+        </div>
+      </ng-template>
+</div>
+<div>
+    <div>
+        <div>
+            <textarea autoGrow="true" class="form-control" rows="1" maxLength="500" [(ngModel)]="newMsg"></textarea>
+        </div>
+    <br>
+        <div>
+            <button expand="block" fill="clear" color="primary" [disabled]="newMsg === ''"
+            class="btn btn-danger" (click)="sendMessage()">
+                enviar
+            </button>
+        </div>
+    </div>
+</div>

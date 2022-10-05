@@ -1,0 +1,27 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" (click)="navigate('ahorcado')">Ahorcado</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" (click)="navigate('mayor-menor')">Mayor o menor</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" (click)="navigate('preguntados')">Preguntados</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" (click)="navigate('anagrama')">Anagrama</a>
+                </li>
+              </ul>
+            <router-outlet></router-outlet>    
+        </div>
+        <div class="col-md-4">
+            <app-chat></app-chat>
+            <h2>Lista de juegos</h2>
+        </div>
+    </div>
+</div>
+
