@@ -45,7 +45,6 @@ export class EncuestaComponent implements OnInit, OnDestroy {
       'Se ha enviado la encuesta', 
       {classname : 'bg-success text-light', delay:3000}
     )
-    console.log(JSON.parse(JSON.stringify(this.encuesta)))
   }
 
   changeRadioValue(e:any){
