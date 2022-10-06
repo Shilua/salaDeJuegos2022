@@ -20,6 +20,10 @@ export class NavBarComponent implements OnInit {
     this.router.navigate(["/bienvenido/sobre-mi"])
   }
 
+  navigate(link:string){
+    this.router.navigate(['bienvenido/'+link]);
+  }
+
   logOut(){
     localStorage.removeItem('user')
     this.router.navigate(['/'])

@@ -47,7 +47,7 @@ export class MayorMenorComponent implements OnInit {
    }
 
   getRandomArbitrary() {
-    return Math.floor(Math.random() * 12);
+    return Math.floor(Math.random() * 12+1);
   }
 
   ngOnInit(): void {

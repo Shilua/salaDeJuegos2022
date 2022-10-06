@@ -28,3 +28,9 @@
     float: right;
     font-size: small;
 }
+
+#chat{
+    height: 779px;
+    max-height: 779px;
+    overflow-y: scroll; 
+}

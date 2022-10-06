@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BienvenidoComponent } from './bienvenido.component';
+import { EncuestaComponent } from './vistas/encuesta/encuesta.component';
 import { AhorcadoComponent } from './vistas/juegos/ahorcado/ahorcado.component';
 import { AnagramaComponent } from './vistas/juegos/anagrama/anagrama.component';
 import { MayorMenorComponent } from './vistas/juegos/mayor-menor/mayor-menor.component';
@@ -14,7 +15,10 @@ children: [
   {path: 'ahorcado', component:AhorcadoComponent},
   {path: 'mayor-menor', component:MayorMenorComponent},
   {path: 'preguntados', component:PreguntasComponent},
-  {path: 'anagrama', component:AnagramaComponent}
+  {path: 'anagrama', component:AnagramaComponent},
+  {path: 'encuesta', component:EncuestaComponent
+}
+
 
 ] }];
 

@@ -1,14 +1,14 @@
-import { AfterContentInit, AfterViewChecked, AfterViewInit, Component, OnInit } from '@angular/core';
-import { GithubService } from 'src/app/services/github.service';
+import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-sobre-mi',
   templateUrl: './sobre-mi.component.html',
   styleUrls: ['./sobre-mi.component.css']
 })
-export class SobreMiComponent implements OnInit, AfterViewChecked {
+export class SobreMiComponent implements OnInit {
   img:string = '';
-  constructor(private githubServ:GithubService) {
+  constructor() {
     
    }
 
@@ -16,8 +16,6 @@ export class SobreMiComponent implements OnInit, AfterViewChecked {
   
   }
 
-  ngAfterViewChecked(): void {
-    this.img = this.githubServ.img;
-  }
+
 
 }
